@@ -32,13 +32,22 @@ public class CategoriaController {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<CategoriaDto> findById(@PathVariable Integer id) throws BadRequestException {
+<<<<<<< HEAD
         Categoria categoria = service.findById(id.longValue());
+=======
+        Categoria categoria = service.findById(id);
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
         return ResponseEntity.ok().body(new CategoriaDto(categoria));
     }
 
     @DeleteMapping(value = "/{id}")
+<<<<<<< HEAD
     public ResponseEntity<Void> delete(@PathVariable Integer id) throws BadRequestException {
         service.delete(id.longValue());
+=======
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+        service.delete(id);
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
         return ResponseEntity.noContent().build();
     }
 

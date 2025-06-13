@@ -58,7 +58,10 @@ public class AutorService {
         return autor;
     }
 
+<<<<<<< HEAD
     public List<Autor> findByNome(String nome) {
         return repository.findByNomeContainingIgnoreCase(nome);
     }
+=======
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
 }

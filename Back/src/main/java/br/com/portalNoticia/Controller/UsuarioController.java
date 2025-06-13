@@ -1,6 +1,10 @@
 package br.com.portalNoticia.Controller;
 
 import br.com.portalNoticia.dto.UsuarioDto;
+<<<<<<< HEAD
+=======
+import br.com.portalNoticia.entity.Pessoa;
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
 import br.com.portalNoticia.entity.Usuario;
 import br.com.portalNoticia.services.UsuarioService;
 import org.apache.coyote.BadRequestException;
@@ -11,6 +15,10 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
 import java.util.List;
+<<<<<<< HEAD
+=======
+import java.util.Optional;
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
 
 @RestController
 @RequestMapping(value = "/usuario")

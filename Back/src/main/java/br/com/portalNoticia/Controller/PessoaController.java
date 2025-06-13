@@ -1,6 +1,12 @@
 package br.com.portalNoticia.Controller;
 
+<<<<<<< HEAD
 import br.com.portalNoticia.dto.PessoaDto;
+=======
+import br.com.portalNoticia.Controller.util.Url;
+import br.com.portalNoticia.dto.PessoaDto;
+import br.com.portalNoticia.entity.Pessoa;
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
 import br.com.portalNoticia.services.PessoaService;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;

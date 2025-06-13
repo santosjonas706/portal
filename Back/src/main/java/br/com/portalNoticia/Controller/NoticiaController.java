@@ -7,6 +7,7 @@ import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+<<<<<<< HEAD
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -14,6 +15,11 @@ import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+=======
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
 import java.util.List;
 
 @RestController
@@ -36,13 +42,21 @@ public class NoticiaController {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<NoticiaDto> findById(@PathVariable Integer id) throws BadRequestException {
+<<<<<<< HEAD
         Noticia noticia = service.findById(id.longValue());
+=======
+        Noticia noticia = service.findById(id);
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
         return ResponseEntity.ok().body(new NoticiaDto(noticia));
     }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id) throws BadRequestException {
+<<<<<<< HEAD
         service.delete(id.longValue());
+=======
+        service.delete(id);
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
         return ResponseEntity.noContent().build();
     }
 
@@ -62,6 +76,7 @@ public class NoticiaController {
         return ResponseEntity.created(uri).build();
     }
 
+<<<<<<< HEAD
     @PostMapping("/upload-imagem")
     public ResponseEntity<String> uploadImagem(@RequestParam("file") MultipartFile file) {
         try {
@@ -80,4 +95,6 @@ public class NoticiaController {
         }
     }
 
+=======
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
 }

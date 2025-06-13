@@ -1,6 +1,10 @@
 package br.com.portalNoticia.dto;
 
 import br.com.portalNoticia.entity.Pessoa;
+<<<<<<< HEAD
+=======
+import jakarta.validation.constraints.NotNull;
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,6 +12,10 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
+<<<<<<< HEAD
+=======
+import java.util.Optional;
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
 
 @Data
 @AllArgsConstructor

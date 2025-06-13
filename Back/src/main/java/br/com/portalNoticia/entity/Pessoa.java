@@ -6,6 +6,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Builder;
 import lombok.Data;
+<<<<<<< HEAD
+=======
+import lombok.Getter;
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
 
 @Entity
 @Data

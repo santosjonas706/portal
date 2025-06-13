@@ -3,7 +3,11 @@ package br.com.portalNoticia.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+<<<<<<< HEAD
 import java.time.LocalDate;
+=======
+import java.security.Timestamp;
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
 
 @Entity
 @Data
@@ -14,22 +18,32 @@ public class Noticia {
     private Integer id;
     private String titulo;
     private String conteudo;
+<<<<<<< HEAD
     private LocalDate dataPublicacao;
+=======
+    private Timestamp dataPublicacao;
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
     @ManyToOne
     private Categoria categoria;
     @ManyToOne
     private Autor autor;
+<<<<<<< HEAD
     @Column(nullable = false)
     private boolean destaque;
     private String imagemUrl; // Caminho/URL da imagem
 
     public Noticia(Integer id, String titulo, String conteudo, LocalDate dataPublicacao, Categoria categoria, Autor autor, boolean destaque) {
+=======
+
+    public Noticia(Integer id, String titulo, String conteudo, Timestamp dataPublicacao, Categoria categoria, Autor autor) {
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
         this.id = id;
         this.titulo = titulo;
         this.conteudo = conteudo;
         this.dataPublicacao = dataPublicacao;
         this.categoria = categoria;
         this.autor = autor;
+<<<<<<< HEAD
         this.destaque = destaque;
     }
 
@@ -55,5 +69,7 @@ public class Noticia {
 
     public void setImagemUrl(String imagemUrl) {
         this.imagemUrl = imagemUrl;
+=======
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
     }
 }

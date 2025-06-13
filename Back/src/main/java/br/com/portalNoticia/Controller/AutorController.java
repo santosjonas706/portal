@@ -4,6 +4,12 @@ import br.com.portalNoticia.Controller.util.Url;
 import br.com.portalNoticia.dto.AutorDto;
 import br.com.portalNoticia.entity.Autor;
 import br.com.portalNoticia.services.AutorService;
+import br.com.portalNoticia.dto.PessoaDto;
+import br.com.portalNoticia.entity.Autor;
+import br.com.portalNoticia.entity.Usuario;
+import br.com.portalNoticia.services.AutorService;
+import jakarta.persistence.criteria.CriteriaBuilder;
+
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +19,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
-@RestController
 @RequestMapping(value = "/autor")
 public class AutorController {
 
@@ -25,6 +30,7 @@ public class AutorController {
     }
 
     @GetMapping
+
     public ResponseEntity<?> findAll() {
         List<Autor> list = service.findAll();
         if (list.isEmpty()) {
@@ -40,6 +46,11 @@ public class AutorController {
         List<Autor> list = service.findByNome(nomeDecodificado);
         List<AutorDto> listDto = list.stream().map(AutorDto::new).toList();
         return ResponseEntity.ok().body(listDto);
+
+    public ResponseEntity<List<AutorDto>> findAll() {
+       List<Autor> list = service.findAll();
+       List<AutorDto> listDto = list.stream().map(AutorDto::new).toList();
+       return ResponseEntity.ok().body(listDto);
     }
 
     @GetMapping(value = "/{id}")
@@ -60,6 +71,12 @@ public class AutorController {
         autor = service.insert(autor);
         URI url = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(autor.getId()).toUri();
         return ResponseEntity.created(url).body(new AutorDto(autor));
+    @PostMapping(value = "/{id}")
+    public ResponseEntity<AutorDto> insert(@RequestBody AutorDto dto) {
+        Autor autor = service.fromDto(dto);
+        autor = service.insert(autor);
+        URI url = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(autor.getBiografia()).toUri();
+        return ResponseEntity.created(url).build();
     }
 
     @PutMapping(value = "/{id}")
@@ -69,4 +86,6 @@ public class AutorController {
         service.update(autor);
         return ResponseEntity.noContent().build();
     }
+
+}
 }

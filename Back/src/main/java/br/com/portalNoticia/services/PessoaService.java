@@ -49,6 +49,14 @@ public class PessoaService {
         return PessoaDto.convert(pessoa);
     }
 
+<<<<<<< HEAD
+=======
+    private void updatePessoa(PessoaDto NovaPessoa) {
+        PessoaDto pessoa = new PessoaDto();
+        NovaPessoa.setNome(pessoa.getNome());
+        NovaPessoa.setEmail(pessoa.getEmail());
+    }
+>>>>>>> 0ad315468dc8f82b2bd34c4a9a84805e7737602f
 
     public Pessoa fromDto(PessoaDto pessoaDto) {
         return new Pessoa(pessoaDto.getId(), pessoaDto.getNome(), pessoaDto.getEmail());
